@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mad-agentic.io | Agent Workspace</title>
+  <meta
+    name="description"
+    content="Agent Workspace / Control Center landing page for mad-agentic.io with runs, tools, memory, approvals, orchestration, and guardrails."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="mad-agentic.io home">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span class="brand-text">mad-agentic.io</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#workspace">Workspace</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#github-products">Products</a>
+        <a href="#guardrails">Guardrails</a>
+        <a href="#docs">Docs</a>
+      </nav>
+
+      <a class="nav-cta" href="README.md">Open Docs</a>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">AGENT WORKSPACE / CONTROL CENTER</p>
+          <h1>Run autonomous workflows with production-grade control.</h1>
+          <p class="hero-text">
+            mad-agentic.io gives teams a single surface for run state, tool traces,
+            memory context, approvals, and security boundaries.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#workspace">Open Control Surface</a>
+            <a class="button button-secondary" href="README.md">Read Documentation</a>
+          </div>
+
+          <dl class="hero-stats" aria-label="Platform metrics">
+            <div>
+              <dt>Running agents</dt>
+              <dd>28</dd>
+            </div>
+            <div>
+              <dt>Tool calls / day</dt>
+              <dd>4.2M</dd>
+            </div>
+            <div>
+              <dt>Approval latency</dt>
+              <dd>96ms</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-window">
+            <div class="window-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="dashboard-topline">
+              <span class="status-pill">Live Workspace</span>
+              <span class="dashboard-label">cluster: prod-apac / fabric-03</span>
+            </div>
+
+            <div class="hero-kpi-strip" aria-label="Control center key indicators">
+              <div class="kpi-chip">
+                <span>Run success</span>
+                <strong>99.4%</strong>
+              </div>
+              <div class="kpi-chip">
+                <span>Guardrail hits</span>
+                <strong>14</strong>
+              </div>
+              <div class="kpi-chip">
+                <span>Escalations</span>
+                <strong>3</strong>
+              </div>
+            </div>
+
+            <div class="snippet-tabs dashboard-tabs" role="tablist" aria-label="Workspace panels">
+              <button class="snippet-tab is-active" type="button" role="tab" aria-selected="true" data-target="snippet-runs">Agent Runs</button>
+              <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-target="snippet-approvals">Approval Flow</button>
+              <button class="snippet-tab" type="button" role="tab" aria-selected="false" data-target="snippet-memory">Memory State</button>
+            </div>
+
+            <div class="hero-stage">
+              <article class="code-card is-active workspace-card" id="snippet-runs" role="tabpanel">
+                <header>
+                  <span class="file-label">agent-runs</span>
+                  <span class="file-meta">real-time execution monitor</span>
+                </header>
+                <div class="workspace-grid">
+                  <div class="mini-stat">
+                    <span>Queued</span>
+                    <strong>12</strong>
+                  </div>
+                  <div class="mini-stat">
+                    <span>Running</span>
+                    <strong>07</strong>
+                  </div>
+                  <div class="mini-stat">
+                    <span>Blocked</span>
+                    <strong>02</strong>
+                  </div>
+                </div>
+                <div class="run-health">
+                  <p class="run-health-title">System health</p>
+                  <div class="run-health-track" role="img" aria-label="System health at 94 percent">
+                    <span></span>
+                  </div>
+                </div>
+                <ul class="signal-list" aria-label="Recent agent runs">
+                  <li><span>research-agent</span><strong>Completed / 3 findings</strong></li>
+                  <li><span>release-orchestrator</span><strong>Awaiting approval</strong></li>
+                  <li><span>support-triage</span><strong>Escalated to operator</strong></li>
+                </ul>
+              </article>
+
+              <article class="code-card workspace-card" id="snippet-approvals" role="tabpanel" hidden>
+                <header>
+                  <span class="file-label">approval-flow</span>
+                  <span class="file-meta">human-in-the-loop checkpointing</span>
+                </header>
+                <div class="approval-lane">
+                  <div class="approval-step is-done">Plan draft</div>
+                  <div class="approval-step is-done">Tool simulation</div>
+                  <div class="approval-step is-live">Human review</div>
+                  <div class="approval-step">Execute</div>
+                </div>
+                <ul class="signal-list" aria-label="Approval decisions">
+                  <li><span>Policy check</span><strong>Passed</strong></li>
+                  <li><span>Budget threshold</span><strong>Within guardrail</strong></li>
+                  <li><span>Operator note</span><strong>Approved / narrow scope</strong></li>
+                </ul>
+              </article>
+
+              <article class="code-card workspace-card" id="snippet-memory" role="tabpanel" hidden>
+                <header>
+                  <span class="file-label">memory-state</span>
+                  <span class="file-meta">session, repo, and policy memory</span>
+                </header>
+                <div class="memory-map">
+                  <div class="memory-node">
+                    <span>Session</span>
+                    <strong>Active task context</strong>
+                  </div>
+                  <div class="memory-node">
+                    <span>Repo</span>
+                    <strong>Verified conventions</strong>
+                  </div>
+                  <div class="memory-node">
+                    <span>Policy</span>
+                    <strong>Guardrails + approvals</strong>
+                  </div>
+                </div>
+                <ul class="signal-list" aria-label="Memory events">
+                  <li><span>Summary checkpoint</span><strong>Saved 09:14 UTC</strong></li>
+                  <li><span>Repo pattern</span><strong>Static Pages deployment</strong></li>
+                  <li><span>Risk note</span><strong>No destructive actions</strong></li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="logos-strip section" aria-label="Trusted integrations">
+        <p>Connected to the stack your agents already use</p>
+        <div class="logo-grid">
+          <span>GitHub</span>
+          <span>GitLab</span>
+          <span>Docker</span>
+          <span>OpenAI</span>
+          <span>Slack</span>
+          <span>Jira</span>
+        </div>
+      </section>
+
+      <section class="features section" id="workspace">
+        <div class="section-heading">
+          <p class="eyebrow">WORKSPACE SIGNALS</p>
+          <h2>Core control primitives for high-trust autonomous systems.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <h3>Agent Runs</h3>
+            <p>See queue depth, runtime state, retries, failures, and handoffs in one panel.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3>Tool Calls</h3>
+            <p>Inspect external calls with outcomes, latency, and policy context.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3>Memory</h3>
+            <p>Separate session, repository, and policy memory for cleaner, auditable reasoning.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3>Approval Flow</h3>
+            <p>Route sensitive actions through human checkpoints before execution.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="preview section" id="timeline">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">ACTIVITY TIMELINE</p>
+            <h2>Track what happened, why it happened, and who approved it.</h2>
+          </div>
+          <p class="section-note">
+            Chronology, checkpoints, and evidence are first-class UI elements.
+          </p>
+        </div>
+
+        <div class="preview-layout">
+          <div class="timeline-legend reveal">
+            <div><span class="legend-dot info"></span>Observed</div>
+            <div><span class="legend-dot warn"></span>Approval</div>
+            <div><span class="legend-dot success"></span>Executed</div>
+          </div>
+
+          <div class="snippet-stage">
+            <article class="code-card is-active timeline-card">
+              <header>
+                <span class="file-label">run-2481 / operational timeline</span>
+                <span class="file-meta">support-triage > billing-escalation</span>
+              </header>
+              <ol class="timeline-list">
+                <li>
+                  <span class="timeline-badge info">09:12</span>
+                  <div>
+                    <strong>Intake received</strong>
+                    <p>Issue classified and prior support context loaded.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline-badge info">09:13</span>
+                  <div>
+                    <strong>Tool chain executed</strong>
+                    <p>CRM lookup, billing fetch, and notifier completed within budget.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline-badge warn">09:14</span>
+                  <div>
+                    <strong>Approval requested</strong>
+                    <p>Refund action crossed policy boundary and paused for review.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="timeline-badge success">09:16</span>
+                  <div>
+                    <strong>Action released</strong>
+                    <p>Operator approved partial refund; workflow closed with audit entry.</p>
+                  </div>
+                </li>
+              </ol>
+            </article>
+          </div>
+
+          <aside class="preview-notes reveal">
+            <h3>Why this matters</h3>
+            <ul>
+              <li>Every decision has a visible checkpoint in the run history.</li>
+              <li>Approval boundaries are explicit, not buried in backend policy.</li>
+              <li>Auditability is built into the operator view.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="integrations section" id="orchestration" aria-labelledby="integrations-title">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">MULTI-AGENT ORCHESTRATION</p>
+            <h2 id="integrations-title">Compose specialist agents into one governed execution graph.</h2>
+          </div>
+          <a class="text-link" href="#docs">See orchestration notes</a>
+        </div>
+
+        <div class="integration-cards">
+          <article class="integration-card reveal"><span class="integration-mark github">01</span><strong>Research Agent</strong><p>Collects context, reads memory, builds the initial operating brief.</p></article>
+          <article class="integration-card reveal"><span class="integration-mark docker">02</span><strong>Planner Agent</strong><p>Converts objectives into bounded policy-aware action plans.</p></article>
+          <article class="integration-card reveal"><span class="integration-mark vercel">03</span><strong>Executor Agent</strong><p>Runs tool chains and publishes verifiable state changes.</p></article>
+          <article class="integration-card reveal"><span class="integration-mark slack">04</span><strong>Reviewer Agent</strong><p>Scores risk and routes uncertain steps to human review.</p></article>
+          <article class="integration-card reveal"><span class="integration-mark jira">05</span><strong>Memory Agent</strong><p>Persists validated outcomes to session and repository memory.</p></article>
+          <article class="integration-card reveal"><span class="integration-mark gitlab">06</span><strong>Audit Agent</strong><p>Records actor, tools, approvals, and final decision trail.</p></article>
+        </div>
+      </section>
+
+      <section class="use-cases section" id="use-cases">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">USE CASES</p>
+            <h2>Deploy the same control model across high-impact workflows.</h2>
+          </div>
+          <p class="section-note">Pick a lane, then reuse the same run, approval, and audit primitives.</p>
+        </div>
+
+        <div class="use-case-grid">
+          <article class="use-case-card reveal">
+            <p class="use-case-tag">Engineering</p>
+            <h3>Release Assistant</h3>
+            <p>Plan rollout, run checks, open approvals, and publish release artifacts with full traceability.</p>
+          </article>
+          <article class="use-case-card reveal">
+            <p class="use-case-tag">Support</p>
+            <h3>Ticket Triage Agent</h3>
+            <p>Classify issues, fetch customer context, draft responses, and escalate only risk-bound actions.</p>
+          </article>
+          <article class="use-case-card reveal">
+            <p class="use-case-tag">Operations</p>
+            <h3>Incident Response Agent</h3>
+            <p>Correlate signals, recommend runbooks, execute safe steps, and request approval on critical paths.</p>
+          </article>
+          <article class="use-case-card reveal">
+            <p class="use-case-tag">Growth</p>
+            <h3>Experiment Operator</h3>
+            <p>Generate variants, sync analytics tools, and maintain a clean audit trail for each release decision.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="products section" id="github-products">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">GITHUB PRODUCTS</p>
+            <h2>Quick start guidance for mad-agentic GitHub products.</h2>
+          </div>
+          <a class="text-link" href="https://github.com/mad-agentic" target="_blank" rel="noopener noreferrer">View all repositories</a>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card reveal">
+            <div class="product-head">
+              <h3>ProxyAPI.MAD</h3>
+              <a href="https://github.com/mad-agentic/ProxyAPI.MAD" target="_blank" rel="noopener noreferrer">Open repository</a>
+            </div>
+            <p>
+              Admin dashboard plus proxy backend for AI CLI tools,
+              compatible with OpenAI/Gemini/Claude/Codex and optimized for local, self-managed provider setups.
+            </p>
+
+            <div class="product-quickstart">
+              <p class="product-label">Quick Start (Windows)</p>
+              <ol>
+                <li>Clone the `ProxyAPI.MAD` repository.</li>
+                <li>From project root, run `run-dev.bat` to start backend and frontend.</li>
+                <li>Or run `run-real.bat` for backend-only mode.</li>
+              </ol>
+            </div>
+
+            <div class="product-meta">
+              <span>Backend: Go (`proxyapi_core/`)</span>
+              <span>Frontend: React + Vite + TypeScript (`frontend/`)</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="compare section" id="guardrails">
+        <div class="section-heading">
+          <p class="eyebrow">SECURITY / AUDIT / GUARDRAILS</p>
+          <h2>Keep autonomous actions bounded before they touch real systems.</h2>
+        </div>
+
+        <div class="table-wrap reveal">
+          <table>
+            <caption class="sr-only">Guardrails and audit table</caption>
+            <thead>
+              <tr>
+                <th scope="col">Control</th>
+                <th scope="col">How mad-agentic.io handles it</th>
+                <th scope="col">Operator outcome</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Policy guardrails</th>
+                <td>Agents evaluate scope, cost, and sensitivity before execution.</td>
+                <td>Unsafe actions are blocked early.</td>
+              </tr>
+              <tr>
+                <th scope="row">Approval routing</th>
+                <td>Human gates appear inline when an action crosses policy thresholds.</td>
+                <td>Operators approve only the narrow action that matters.</td>
+              </tr>
+              <tr>
+                <th scope="row">Audit logging</th>
+                <td>Each tool call, memory write, and approval is recorded to a visible trail.</td>
+                <td>Investigations are faster and evidence-ready.</td>
+              </tr>
+              <tr>
+                <th scope="row">Execution boundaries</th>
+                <td>Runs are limited by environment, tool class, and action type.</td>
+                <td>Teams start safe and scale autonomy gradually.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="audit-grid">
+          <article class="audit-card reveal">
+            <p class="audit-label">Audit Log</p>
+            <ul class="signal-list">
+              <li><span>09:14:06</span><strong>refund.action queued</strong></li>
+              <li><span>09:14:08</span><strong>policy.guardrail matched</strong></li>
+              <li><span>09:16:11</span><strong>human approval granted</strong></li>
+            </ul>
+          </article>
+          <article class="audit-card reveal">
+            <p class="audit-label">Guardrail Pack</p>
+            <ul class="guardrail-list">
+              <li>Tool budget limits by workflow type</li>
+              <li>Restricted actions on production resources</li>
+              <li>Mandatory approval for destructive or financial actions</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="docs-cta section" id="docs">
+        <div class="docs-card reveal">
+          <p class="eyebrow">DOCUMENTATION</p>
+          <h2>Need implementation detail beyond the UI layer?</h2>
+          <p>
+            Open repository docs to maintain this control-center page and evolve the operating model.
+          </p>
+          <a class="button button-primary" href="README.md">Open README Documentation</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>mad-agentic.io</p>
+      <div>
+        <a href="#workspace">Workspace</a>
+        <a href="#github-products">Products</a>
+        <a href="#guardrails">Guardrails</a>
+        <a href="README.md">Docs</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
